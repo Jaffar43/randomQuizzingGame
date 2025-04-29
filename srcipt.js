@@ -1,1 +1,62 @@
-  
+const question = [
+  {
+    question: 'What is the capital of France?',
+    choices: ['London', 'Berlin', 'Paris', 'Madrid'],
+    answer: 2
+  },
+  {
+    question: 'Which planet is know as the red planet?',
+    choices: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
+    answer: 1
+  },
+  {
+    question: 'What language is primarily used for web development?',
+    choices: ['Java', 'Python', 'C++', 'JavaScript'],
+    answer: 3
+  },
+  {
+    question: 'What is the largest mammal in the world?',
+    choices: ['Elephant', 'Blue Whale', 'Giraffe', 'Polar Bear'],
+    answer: 1
+  },
+  {
+    question: 'Who painted the Mona Lisa?',
+    choices: [
+      'Vincent van Gogh',
+      'Pablo Picasso',
+      'Leonardo da Vinci',
+      'Michelangelo'
+    ],
+    answer: 2
+  },
+  {
+    question: 'Which country is home to the Kangaroo?',
+    choices: ['New Zealand', 'South Africa', 'Australia', 'Brazil'],
+    answer: 2
+  },
+  {
+    question: 'What is the chemical symbol for Gold?',
+    choices: ['Go', 'Gd', 'Au', 'Ag'],
+    answer: 2
+  },
+  {
+    question: 'What is the largest ocean on Earth?',
+    choices: [
+      'Atlantic ocean',
+      'Indian ocean',
+      'Arctic ocean',
+      'Pacific ocean'
+    ],
+    answer: 3
+  },
+  {
+    question: 'What is the main component of the Sun?',
+    choices: ['Liquid Lava', 'Hydrogen', 'Oxygen', 'Carbon'],
+    answer: 1
+  },
+  {
+    question: 'Which year did World War 2 end?',
+    choices: ['1943', '1945', '1946', '1944'],
+    answer: 1
+  }
+]
