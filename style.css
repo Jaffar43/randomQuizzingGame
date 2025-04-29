@@ -32,3 +32,17 @@ body {
   border: none;
   background-color: #7fffd4;
 }
+
+.buttonDefault:hover {
+  background-color: #00ced1;
+}
+
+.helpButton {
+  background-color: #00bfff;
+  border: none;
+  border-radius: 30px;
+}
+
+.helpButton:hover {
+  background-color: #0000cd;
+}
