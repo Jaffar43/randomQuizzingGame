@@ -125,3 +125,40 @@ const shuffleArray = (array) => {
     ;[array[i], array[j]] = [array[j], array[i]]
   }
 }
+
+const startTime = () => {
+  timeLeft = 15
+  if (timerInterval) clearInterval(timerInterval)
+
+  timerElement.textContent = timeLeft
+  timerInterval = setInterval(() => {
+    timeLeft--
+    timerElement.textContent = timeLeft
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval)
+      handleTimeOut()
+    }
+  }, 1000)
+}
+
+const handleTimeOut = () => {
+  clearInterval(timer)
+  gameActive = false
+
+  for (let i = 0; i < 4; i++) {
+    guessButton[i].disabled = true
+  }
+
+  guessButton[correctAnswerIndex].style.backgroundColor = '#4caf50'
+  questionElement.textContent = 'Time is up!'
+
+  setTimeout(() => {
+    currentQuestionIndex++
+    if (currentQuestionIndex < question.length) {
+      loadQuestions()
+    } else {
+      endGame()
+    }
+  }, 3000)
+}
