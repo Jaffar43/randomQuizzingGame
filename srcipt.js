@@ -60,3 +60,39 @@ const question = [
     answer: 1
   }
 ]
+
+let currentQuestionIndex = 0
+let score = 0
+let doublePointsAvailable = 1
+let removeTwoAvailable = 1
+let stopTimerAvailable = 1
+let questionOrder = []
+let doublePointsActive = false
+let correctAnswerIndex
+let timerInterval
+let gameActive = false
+let timeLeft = 15
+
+//DOM Element
+const startScreen = document.getElementById('startScreen')
+const quizContainer = document.getElementById('quizContainer')
+const startButton = document.getElementById('startButton')
+const questionElement = document.getElementById('question')
+const scoreElement = document.getElementById('score')
+const timerElement = document.getElementById('timer')
+const choicesElement = [
+  document.getElementById('choice0'),
+  document.getElementById('choice1'),
+  document.getElementById('choice2'),
+  document.getElementById('choice3')
+]
+const guessButton = [
+  document.getElementById('guess0'),
+  document.getElementById('guess1'),
+  document.getElementById('guess2'),
+  document.getElementById('guess3')
+]
+const doublePointsButton = document.getElementById('doublePoints')
+const removeTwoButton = document.getElementById('removeTwo')
+const stopTimerButton = document.getElementById('stopTimer')
+const restartButton = document.getElementById('restart')
