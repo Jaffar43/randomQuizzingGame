@@ -46,3 +46,13 @@ body {
 .helpButton:hover {
   background-color: #0000cd;
 }
+
+.restartButton {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 30px;
+}
+
+.restartButton:hover {
+  background-color: #8b0000;
+}
