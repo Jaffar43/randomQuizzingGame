@@ -222,3 +222,20 @@ const checkAnswer = (selectedIndex) => {
     }
   }, 2000)
 }
+
+guessButton.forEach((button, index) => {
+  button.addEventListener('click', () => checkAnswer(index))
+})
+
+const updateScore = () => {
+  scoreElement.textContent = `Score: ${score}`
+}
+
+const doublePoint = () => {
+  if (doublePointsAvailable > 0) {
+    doublePointsActive = true
+    doublePointsAvailable--
+    alert('Double points activated for the next correct answer!')
+  }
+}
+doublePointsButton.addEventListener('click', doublePoint)
