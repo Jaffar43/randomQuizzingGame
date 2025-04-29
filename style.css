@@ -99,3 +99,12 @@ body {
   opacity: 0.5;
   pointer-events: none;
 }
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
