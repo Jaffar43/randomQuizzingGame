@@ -1,3 +1,4 @@
+// The Question
 const question = [
   {
     question: 'What is the capital of France?',
@@ -61,6 +62,7 @@ const question = [
   }
 ]
 
+// Variables
 let currentQuestionIndex = 0
 let score = 0
 let doublePointsAvailable = 1
@@ -143,7 +145,7 @@ const startTime = () => {
 }
 
 const handleTimeOut = () => {
-  clearInterval(timer)
+  clearInterval(timerInterval)
   gameActive = false
 
   for (let i = 0; i < 4; i++) {
@@ -173,6 +175,7 @@ const stopTimer = () => {
 stopTimerButton.addEventListener('click', stopTimer)
 
 const loadQuestions = () => {
+  doublePointsActive = false
   if (!gameActive) return
 
   if (currentQuestionIndex >= question.length) {
@@ -218,11 +221,10 @@ const checkAnswer = (selectedIndex) => {
       gameActive = true
       loadQuestions()
     } else {
-      endGame
+      endGame()
     }
   }, 2000)
 }
-
 guessButton.forEach((button, index) => {
   button.addEventListener('click', () => checkAnswer(index))
 })
@@ -278,6 +280,6 @@ const restartGame = () => {
   startScreen.style.display = 'block'
   quizContainer.style.display = 'none'
 
-  restartButton.style.display = 'inline=block'
+  restartButton.style.display = 'inline-block'
 }
 restartButton.addEventListener('click', restartGame)
