@@ -255,3 +255,29 @@ const removeTwoAnswers = () => {
   }
 }
 removeTwoButton.addEventListener('click', removeTwoAnswers)
+
+const endGame = () => {
+  clearInterval(timer)
+  gameActive = false
+  questionElement.textContent = 'Quiz Completed!'
+
+  for (let i = 0; i < 4; i++) {
+    choicesElement[i].disabled = true
+  }
+  scoreElement.textContent = `Your Score: ${score} out of ${
+    question.length * 5
+  }`
+
+  doublePointsButton.disabled = true
+  removeTwoButton.disabled = true
+  stopTimerButton.disabled = true
+  restartButton.style.display = 'inline-block'
+}
+
+const restartGame = () => {
+  startScreen.style.display = 'block'
+  quizContainer.style.display = 'none'
+
+  restartButton.style.display = 'inline=block'
+}
+restartButton.addEventListener('click', restartGame)
