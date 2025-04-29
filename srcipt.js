@@ -96,3 +96,32 @@ const doublePointsButton = document.getElementById('doublePoints')
 const removeTwoButton = document.getElementById('removeTwo')
 const stopTimerButton = document.getElementById('stopTimer')
 const restartButton = document.getElementById('restart')
+
+const initializeGame = () => {
+  startScreen.style.display = 'none'
+  quizContainer.style.display = 'block'
+
+  questionOrder = [...Array(question.length).keys()]
+  shuffleArray(questionOrder)
+
+  currentQuestionIndex = 0
+  score = 0
+  doublePointsAvailable = 1
+  removeTwoAvailable = 1
+  stopTimerAvailable = 1
+  doublePointsActive = false
+  gameActive = true
+
+  loadQuestions()
+  startTime()
+  updateScore()
+}
+
+startButton.addEventListener('click', initializeGame)
+
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
+  }
+}
