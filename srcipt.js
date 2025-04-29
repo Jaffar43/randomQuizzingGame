@@ -171,3 +171,54 @@ const stopTimer = () => {
   }
 }
 stopTimerButton.addEventListener('click', stopTimer)
+
+const loadQuestions = () => {
+  if (!gameActive) return
+
+  if (currentQuestionIndex >= question.length) {
+    endGame()
+    return
+  }
+  const questionIndex = questionOrder[currentQuestionIndex]
+  const questionObj = question[questionIndex]
+  questionElement.textContent = questionObj.question
+  correctAnswerIndex = questionObj.answer
+
+  for (let i = 0; i < 4; i++) {
+    choicesElement[i].textContent = questionObj.choices[i]
+    guessButton[i].disabled = false
+    choicesElement[i].parentElement.classList.remove('hidden', 'disabled')
+  }
+  startTime()
+}
+
+const checkAnswer = (selectedIndex) => {
+  if (!gameActive) return
+
+  clearInterval(timer)
+  gameActive = false
+
+  for (let i = 0; i < 4; i++) {
+    guessButton[i].disabled = true
+  }
+
+  if (selectedIndex === correctAnswerIndex) {
+    const points = doublePointsActive ? 10 : 5
+    score += points
+    updateScore()
+  }
+
+  if (doublePointsActive) {
+    doublePointsActive = false
+  }
+
+  setTimeout(() => {
+    currentQuestionIndex++
+    if (currentQuestionIndex < question.length) {
+      gameActive = true
+      loadQuestions()
+    } else {
+      endGame
+    }
+  }, 2000)
+}
