@@ -162,3 +162,12 @@ const handleTimeOut = () => {
     }
   }, 3000)
 }
+
+const stopTimer = () => {
+  if (stopTimerAvailable > 0) {
+    clearInterval(timerInterval)
+    stopTimerAvailable--
+    timerElement.textContent = 'Timer stopped'
+  }
+}
+stopTimerButton.addEventListener('click', stopTimer)
