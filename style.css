@@ -13,3 +13,12 @@ body {
   padding: 20px;
   box-shadow: 0 10px 36px 16px rgba(0, 0, 0, 1);
 }
+
+.centered {
+  text-align: center;
+}
+
+.hsg {
+  color: #9400d3;
+  margin-bottom: 20px;
+}
