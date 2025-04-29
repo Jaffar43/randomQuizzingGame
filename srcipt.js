@@ -239,3 +239,19 @@ const doublePoint = () => {
   }
 }
 doublePointsButton.addEventListener('click', doublePoint)
+
+const removeTwoAnswers = () => {
+  if (removeTwoAvailable > 0) {
+    let incorrectIndices = [0, 1, 2, 3].filter((i) => i !== correctAnswerIndex)
+
+    shuffleArray(incorrectIndices)
+    const toRemove = incorrectIndices.slice(0, 2)
+
+    toRemove.forEach((index) => {
+      guessButton[index].disabled = true
+      choicesElement[index].parentElement.classList.add('hidden')
+    })
+    removeTwoAvailable--
+  }
+}
+removeTwoButton.addEventListener('click', removeTwoAnswers)
