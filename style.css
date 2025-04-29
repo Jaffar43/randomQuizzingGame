@@ -22,3 +22,13 @@ body {
   color: #9400d3;
   margin-bottom: 20px;
 }
+
+.buttonDefault {
+  height: 30px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+  border: none;
+  background-color: #7fffd4;
+}
